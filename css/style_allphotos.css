@@ -1,0 +1,9 @@
+.taille {
+    margin: 20px;
+}
+
+div a img {
+    width: 350px;
+    height: 355px;
+    border-radius: 10px;
+}

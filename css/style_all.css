@@ -1,0 +1,138 @@
+h1, h2, h3, nav{
+    font-family: "Ranchers";
+    letter-spacing: 1px;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background: #EFEFEF;
+}
+
+.subcrib{
+    margin-top: 10em;
+    margin-right: 10em;
+  }
+
+
+p, label {
+    font-family: 'Lemon', cursive;
+}
+
+.h1Lemon{
+    font-family: 'Lemon', cursive;
+}
+
+.logo {
+    margin-left: 15ch;
+    margin-top: 15ch;
+    justify-content: center;
+    align-items: center;
+
+}
+
+div .logo ul {
+position: relative;
+}
+
+div .logo ul li {
+
+    position: relative;
+    margin-bottom: 1ch;
+    list-style: none;
+}
+
+div .logo ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+    background: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    border-radius: 50%;
+    color: #e2e2e2;
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+                    2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.loader {
+    position : fixed;
+    z-index: 9999;
+    background : url('../assets/img/loader.gif') 50% 50% no-repeat;
+    background-color: white;
+    top : 0px;
+    left : 0px;
+    height : 100%;
+    width : 100%;
+    cursor : wait;
+    }
+
+div .logo ul li a:hover {
+    color: #999;
+    transform: translateY(-20px);
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+    2px 24px 10px rgba(0, 0, 0, 0.1);
+}
+
+div .logo ul li a:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+div .logo ul li:nth-child(2) a:before{
+    background: #1877f2;
+}
+
+div .logo ul li:nth-child(1) a:before{
+    background: #FF0000;
+}
+
+div .logo ul li:nth-child(3) a:before{
+    background: #c32aa3;
+}
+
+div .logo ul li a .fa {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.B {
+    border: solid 1px;
+    border-radius: 10px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    video {
+        width: 320px;
+        height: 240px;
+    }
+
+    .logo {
+        display: flex;
+        margin-top: 1ch;
+        margin-right: 30px;
+        margin-left: 0%;
+    }
+
+    ul {
+        display: flex;
+    }
+    .subcrib{
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  }

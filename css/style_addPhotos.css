@@ -1,0 +1,13 @@
+.send {
+    border: solid 1px;
+    border-radius: 15px;
+    width: 75ch;
+}
+
+
+@media only screen and (max-width: 600px){
+
+    .send{
+      width: 50ch;
+    }
+  }

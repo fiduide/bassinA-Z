@@ -1,0 +1,42 @@
+
+.test{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progress {
+  width: 600px;
+  margin: auto;
+}
+
+.bar {
+  width:0%;
+  height:100%;
+}
+
+
+  @media only screen and (max-width: 600px){
+
+    #progress {
+      width: 300px;
+      margin: auto;
+  }
+  
+  .bar {
+      width:0%;
+      height:100%;
+  }
+    .test{
+      width: 90%;
+      margin-left: auto;
+       margin-right: auto;
+    }
+
+    .titre1{
+      font-size: 25px;
+    }
+    .titre2{
+      font-size: 20px;
+    }
+  }

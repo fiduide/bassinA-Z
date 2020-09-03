@@ -1,0 +1,70 @@
+
+  .test{
+    width: 75ch;
+    margin-left: auto;
+     margin-right: auto;
+  }
+
+  .front{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .filtre{
+    width: 20ch;
+    margin-left: auto;
+     margin-right: auto;
+  }
+
+  
+
+  .cards{
+    width: 20rem;
+  }
+
+  .vids{
+    margin: auto;
+    width: 40rem;
+  }
+
+  .vidminS{
+    height:350px;
+  }
+  
+  .fontext{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+
+
+  @media only screen and (max-width: 600px){
+
+    .test{
+      width: 90%;
+      margin-left: auto;
+       margin-right: auto;
+    }
+
+    .cards{
+        width: 20rem;
+      }
+  
+    .titre1{
+      font-size: 25px;
+    }
+    .titre2{
+      font-size: 20px;
+    }
+
+    .vids {
+      margin: auto;
+      width: 20rem;
+
+    }
+
+    .vidminS{
+      height:250px;
+    }
+
+
+    
+  }
