@@ -1,5 +1,17 @@
 <?php
 session_start();
+if(!isset($_COOKIE['visited'])){
+setcookie('visited', '0', (time() + 2*365*24*60*60), '/', '', false);
+}
+
+if(isset($_COOKIE['visited'])){
+    if($_COOKIE['visited'] == 0){
+        setcookie('visited', '1', (time() + 2*365*24*60*60), '/', '', false);
+        include "noView/bdd.php";
+        $addVisiteur = $bdd->query('UPDATE visite SET nb_visited = nb_visited + 1 WHERE visiteur = visiteur');
+    }
+}
+
 include "header.php";
 ?>
 <!DOCTYPE html>

@@ -140,6 +140,14 @@ $retour_donnee=$bdd->query($video.' LIMIT '.$premiereEntree.', '.$videosParTab.'
 
 </header>
 
+<div class="text-center">
+<?php
+$visited = $bdd->query('SELECT nb_visited FROM visite');
+$visite= $visited->fetch();
+echo '<h1 class="text-center mb-4">Nombre de visiteur : '.$visite['nb_visited'].'</h1> '
+?>
+</div>
+
 
 <div class="row mt-3">
   <div class="col-3">
@@ -159,6 +167,9 @@ $retour_donnee=$bdd->query($video.' LIMIT '.$premiereEntree.', '.$videosParTab.'
       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="true">Photos Uploaded <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cloud-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
   <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z"/>
+</svg></a>
+<a class="nav-link" id="v-pills-pdf-tab" data-toggle="pill" href="#v-pills-pdf" role="tab" aria-controls="v-pills-pdf" aria-selected="true">PDF <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-richtext-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7 2l.5-2.5 3 3L10 5a1 1 0 0 1-1-1zM7 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542l1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V9.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V9s1.54-1.274 1.639-1.208zM5 11a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
 </svg></a>
     </div>
   </div>
@@ -222,7 +233,7 @@ $retour_donnee=$bdd->query($video.' LIMIT '.$premiereEntree.', '.$videosParTab.'
 
       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
       <?php
-            $photoAll = $bdd->query('SELECT titre, couverture, id, description FROM photos');
+            $photoAll = $bdd->query('SELECT titre, couverture, id, description FROM photos ORDER BY id DESC');
 
       ?>
       <table class="table table-hover">
@@ -323,6 +334,33 @@ $retour_donnee=$bdd->query($video.' LIMIT '.$premiereEntree.', '.$videosParTab.'
                             echo '<button type="submit" class="btn btn-success" disabled>Déjà vue</button>';
                         }
                         echo '</form></td>';
+                    echo '</tr>';
+                 }
+                ?>
+                </tbody>
+            </table>
+      </div>
+
+      
+      <div class="tab-pane fade" id="v-pills-pdf" role="tabpanel" aria-labelledby="v-pills-pdf-tab">
+      <?php
+            $pdf = $bdd->query('SELECT * FROM pdf ORDER BY id DESC');
+
+      ?>
+      <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Nom du PDF</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                 while($p = $pdf->fetch()) // On lit les entrées une à une grâce à une boucle
+                 {
+                        echo '<tr>';
+                        echo'<td>'.$p['titre'].'</td>';
+                        echo'<td><a href="noView/delPDFparGet.php?idPDF='.($p['id']).'" class="btn btn-danger">Supprimer</a></td>';
                     echo '</tr>';
                  }
                 ?>
